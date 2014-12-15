@@ -1,1 +1,1 @@
-require('./src/test.spec');
+require('./src/matchers/matchers.spec');

@@ -1,3 +1,1 @@
-module.exports = {
-    test: require('./src/test')
-};
+require('./src/matchers/matchers');

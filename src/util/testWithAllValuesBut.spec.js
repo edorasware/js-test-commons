@@ -10,11 +10,11 @@ describe('testWithAllValuesBut', function () {
     it('should throw an exception when one of the given values is not recognized', function () {
         expect(function () {
             testWithAllValuesBut('non-type', jasmine.createSpy('callback'));
-        }).toThrow('Some value types: "non-typeValue" were not recognized.');
+        }).toThrow('Some value types: "non-type" were not recognized.');
 
         expect(function () {
             testWithAllValuesBut(['number', 'non-type'], jasmine.createSpy('callback'));
-        }).toThrow('Some value types: "numberValue, non-typeValue" were not recognized.');
+        }).toThrow('Some value types: "number, non-type" were not recognized.');
     });
 
     it('should not execute the callback with an argument of the given type', function () {

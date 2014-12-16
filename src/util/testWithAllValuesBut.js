@@ -14,7 +14,9 @@ module.exports = function (valuesToSkip, expectFn) {
     valuesToSkip = asArray(valuesToSkip);
 
     valuesToTest = _.filter(allValues, function (value, key) {
-        return valuesToSkip.indexOf(key) < 0;
+        var typeName = key.substring(0, key.indexOf('Value'));
+
+        return valuesToSkip.indexOf(typeName) < 0;
     });
 
     if (_.keys(allValues).length !== valuesToTest.length + valuesToSkip.length) {
@@ -25,17 +27,13 @@ module.exports = function (valuesToSkip, expectFn) {
 
     function asArray(valuesToSkip) {
         if (_.isArray(valuesToSkip)) {
-            return _.map(valuesToSkip, concatValue);
+            return valuesToSkip;
         }
 
         if (_.isString(valuesToSkip)) {
-            return  [concatValue(valuesToSkip)];
+            return  [valuesToSkip];
         }
 
         throw new Error('Values to skip should be either a string or an array of strings: "' + valuesToSkip + '".');
-
-        function concatValue(valueName) {
-            return _.isString(valueName) ? valueName.concat('Value') : valueName;
-        }
     }
 };

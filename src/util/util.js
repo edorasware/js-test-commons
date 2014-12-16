@@ -24,7 +24,9 @@ function registerWindowFunctions(fns) {
 }
 
 function deregisterWindowFunctions(names) {
-    _.forEach(names, function (name) {
+    _.forEach(names, deregisterWindowFunction);
+
+    function deregisterWindowFunction(name) {
         window[name] = undefined;
-    });
+    }
 }

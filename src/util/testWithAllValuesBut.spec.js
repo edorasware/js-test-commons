@@ -17,20 +17,30 @@ describe('testWithAllValuesBut', function () {
         }).toThrow('Some value types: "number, non-type" were not recognized.');
     });
 
+    it('should execute the callback with 0 and object', function () {
+        var callback = jasmine.createSpy('callback');
+
+        testWithAllValuesBut('string', callback);
+
+        expect(callback).toHaveBeenCalledWith(0);
+        expect(callback).toHaveBeenCalledWith({});
+    });
+
     it('should not execute the callback with an argument of the given type', function () {
         var callback = jasmine.createSpy('callback');
 
-        testWithAllValuesBut('array', callback);
+        testWithAllValuesBut('number', callback);
 
-        expect(callback).not.toHaveBeenCalledWith([]);
+        expect(callback).not.toHaveBeenCalledWith(0);
+        expect(callback).toHaveBeenCalledWith({});
     });
 
     it('should not execute the callback with an argument of the given types', function () {
         var callback = jasmine.createSpy('callback');
 
-        testWithAllValuesBut(['object', 'array'], callback);
+        testWithAllValuesBut(['number', 'boolean'], callback);
 
-        expect(callback).not.toHaveBeenCalledWith({});
-        expect(callback).not.toHaveBeenCalledWith([]);
+        expect(callback).not.toHaveBeenCalledWith(0);
+        expect(callback).not.toHaveBeenCalledWith(true);
     });
 });

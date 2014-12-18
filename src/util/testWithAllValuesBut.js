@@ -23,7 +23,9 @@ module.exports = function (valuesToSkip, expectFn) {
         throw new Error('Some value types: "' + valuesToSkip.join(', ') + '" were not recognized.');
     }
 
-    _.forEach(valuesToTest, expectFn);
+    _.forEach(valuesToTest, function(value) {
+        expectFn(value);
+    });
 
     function asArray(valuesToSkip) {
         if (_.isArray(valuesToSkip)) {

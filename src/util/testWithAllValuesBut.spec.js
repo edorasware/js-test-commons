@@ -7,6 +7,14 @@ describe('testWithAllValuesBut', function () {
         }).toThrow('Values to skip should be either a string or an array of strings: "undefined".');
     });
 
+    it('should execute the callback with all values when the values to skip are empty', function () {
+        var callback = jasmine.createSpy('callback');
+
+        testWithAllValuesBut([], callback);
+
+        expect(callback.callCount).toBe(8);
+    });
+
     it('should throw an exception when one of the given values is not recognized', function () {
         expect(function () {
             testWithAllValuesBut('non-type', jasmine.createSpy('callback'));

@@ -1,6 +1,6 @@
 {
   "name": "js-test-commons",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "Reusable JS test abstractions",
   "main": "index.js",
   "scripts": {

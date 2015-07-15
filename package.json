@@ -1,6 +1,6 @@
 {
   "name": "js-test-commons",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "Reusable JS test abstractions",
   "main": "index.js",
   "scripts": {
@@ -16,10 +16,10 @@
   },
   "homepage": "https://github.com/rohanware/js-test-commons",
   "devDependencies": {
-    "karma": "^0.12.28",
+    "karma": "^0.12.37",
     "karma-browserify": "^1.0.0",
-    "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-jasmine": "^0.2.3",
+    "karma-chrome-launcher": "^0.1.7"
   },
   "dependencies": {
     "lodash": "^3.5.0"

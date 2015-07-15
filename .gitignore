@@ -1,2 +1,11 @@
-.idea
 node_modules
+bower_components
+coverage
+dist
+npm-debug.log
+
+.idea
+*.iml
+
+modernizr.js
+modernizr.min.js

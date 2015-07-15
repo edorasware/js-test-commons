@@ -1,5 +1,5 @@
 beforeEach(function () {
-    this.addMatchers({
+    jasmine.addMatchers({
         toThrowContaining: require('./to-throw-containing-matcher')
     });
 });

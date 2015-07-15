@@ -4,7 +4,7 @@ describe('testWithAllValuesBut', function () {
     it('should throw an exception when the given values is neither string nor array of strings', function () {
         expect(function () {
             testWithAllValuesBut(undefined, jasmine.createSpy('callback'));
-        }).toThrow('Values to skip should be either a string or an array of strings: "undefined".');
+        }).toThrow(new Error('Values to skip should be either a string or an array of strings: "undefined".'));
     });
 
     it('should execute the callback with all values when the values to skip are empty', function () {
@@ -12,17 +12,17 @@ describe('testWithAllValuesBut', function () {
 
         testWithAllValuesBut([], callback);
 
-        expect(callback.callCount).toBe(8);
+        expect(callback.calls.count()).toBe(8);
     });
 
     it('should throw an exception when one of the given values is not recognized', function () {
         expect(function () {
             testWithAllValuesBut('non-type', jasmine.createSpy('callback'));
-        }).toThrow('Some value types: "non-type" were not recognized.');
+        }).toThrow(new Error('Some value types: "non-type" were not recognized.'));
 
         expect(function () {
             testWithAllValuesBut(['number', 'non-type'], jasmine.createSpy('callback'));
-        }).toThrow('Some value types: "number, non-type" were not recognized.');
+        }).toThrow(new Error('Some value types: "number, non-type" were not recognized.'));
     });
 
     it('should execute the callback with 0 and object', function () {

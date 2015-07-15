@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": 1,
+    "jasmine": 1,
+    "node": 1
+  },
+  "globals": {
+    "angular": 1,
+    "module": 1,
+    "inject": 1,
+    "require": 1,
+    "compileTemplate": 1,
+    "testWithAllValuesBut": 1
+  },
+  "rules": {
+    "quotes": [
+      1,
+      "single"
+    ],
+    "eqeqeq": 0,
+    "strict": 0,
+    "no-use-before-define": [
+      2,
+      "nofunc"
+    ],
+    "no-shadow": 0
+  }
+}

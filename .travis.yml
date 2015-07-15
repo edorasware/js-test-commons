@@ -10,3 +10,5 @@ deploy:
   on:
     tags: true
     all_branches: true
+before_install:
+  - "npm install -g npm@latest"

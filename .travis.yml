@@ -6,9 +6,8 @@ deploy:
   provider: npm
   email: almilo@almilo.es
   api_key:
-    secure: aerEMk7ka/I4PDo65SWlXojo9F3uyPnkStHp6GoH7EBrmyVO7/ITE17j1Ac4WDfnkZqDqHSrKK/OIkqKsiWr0pZjHog/fWZM8mnXgyQllKci1n+wsso7MBwvN+1YabcWWQA7P+8dGdmYhUw+KWomO/rB0Db/4+wUlGUCI0t2BEE=
+    secure: Cg5hJkpEwRpVUhWp7KFRHOpaXYfTftFzxAJ2ztUbw9RAjEkAh4kZdFA/Nej6xRRRq4zstLdYNOITb4Gww2TxMSECo+hgspGPkR22jjXzRJDZoxctGGx6Pu1HYwud6zkZNRCA/Yq8gYII53qzfL1dP3FJE7gm7t3vVI9m1zpqZcE=
   on:
     tags: true
-    all_branches: true
 before_install:
-  - "npm install -g npm@latest"
+- npm install -g npm@latest

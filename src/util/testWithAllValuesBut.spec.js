@@ -30,7 +30,7 @@ describe('testWithAllValuesBut', function () {
 
         testWithAllValuesBut('string', callback);
 
-        expect(callback).toHaveBeenCalledWith(0);
+        expect(callback).toHaveBeenCalledWith(10);
         expect(callback).toHaveBeenCalledWith({});
     });
 
@@ -39,7 +39,7 @@ describe('testWithAllValuesBut', function () {
 
         testWithAllValuesBut('number', callback);
 
-        expect(callback).not.toHaveBeenCalledWith(0);
+        expect(callback).not.toHaveBeenCalledWith(10);
         expect(callback).toHaveBeenCalledWith({});
     });
 
@@ -48,7 +48,7 @@ describe('testWithAllValuesBut', function () {
 
         testWithAllValuesBut(['number', 'boolean'], callback);
 
-        expect(callback).not.toHaveBeenCalledWith(0);
+        expect(callback).not.toHaveBeenCalledWith(10);
         expect(callback).not.toHaveBeenCalledWith(true);
     });
 });

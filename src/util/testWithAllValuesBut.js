@@ -2,7 +2,7 @@ module.exports = function (valuesToSkip, expectFn) {
     var _ = require('lodash'),
         allValues = {
             stringValue: 'text',
-            numberValue: 0,
+            numberValue: 10,
             booleanValue: true,
             nullValue: null,
             undefinedValue: undefined,
